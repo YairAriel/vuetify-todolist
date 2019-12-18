@@ -1,8 +1,10 @@
 <template>
   <v-app>
     <v-container>
-      <AddItem />
-      <List />
+      <v-card :class="{'pa-4': $vuetify.breakpoint.mdAndUp, 'pa-2': $vuetify.breakpoint.smAndDown}">
+        <AddItem />
+        <List />
+      </v-card>
     </v-container>
   </v-app>
 </template>
@@ -24,3 +26,7 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>

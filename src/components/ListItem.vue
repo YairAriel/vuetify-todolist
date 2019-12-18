@@ -1,6 +1,6 @@
 <template>
   <v-chip
-    class="list-item ma-2"
+    class="list-item ma-2 pl-4 pr-3"
     close
     color="teal"
     :outlined="!item.checked"
@@ -37,5 +37,8 @@
     &:hover {
       cursor: pointer;
     }
+  }
+  .v-chip__close {
+    color: yellow !important;
   }
 </style>
