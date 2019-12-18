@@ -16,9 +16,20 @@ export default new Vuex.Store({
       }
     ]
   },
+  getters: {
+    list(state) {
+      return state.list;
+    }
+  },
   mutations: {
     itemAdded(state, newListItem) {
       state.list.unshift(newListItem);
+    },
+    toggleListItem(state, index) {
+      state.list[index].checked = !state.list[index].checked;
+    },
+    deleteItem(state, index) {
+      state.list.splice(index, 1);
     }
   },
   actions: {
