@@ -23,13 +23,16 @@ export default new Vuex.Store({
   },
   mutations: {
     itemAdded(state, newListItem) {
-      state.list.unshift(newListItem);
+      state.list.push(newListItem);
     },
     toggleListItem(state, index) {
       state.list[index].checked = !state.list[index].checked;
     },
     deleteItem(state, index) {
       state.list.splice(index, 1);
+    },
+    editListItem(state, itemToEdit) {
+      state.list[itemToEdit.index].name = itemToEdit.name; 
     }
   },
   actions: {

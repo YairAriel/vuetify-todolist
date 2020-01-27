@@ -2,14 +2,21 @@
   <v-container>
     <v-layout row wrap>
       <v-flex xs12 md8 class="mb-2">
-        <v-text-field hide-details label="Add Item" color="purple darken-2" outlined v-model="newItem"></v-text-field>
+        <v-text-field 
+          hide-details label="Add Item" 
+          color="purple darken-2" 
+          outlined 
+          v-model="newItem"
+          ref="addItemInput"
+        >
+        </v-text-field>
       </v-flex>
       <v-flex xs12 md3 offset-md1>
         <v-btn 
           x-large 
           block 
           color="purple darken-2" 
-          dark 
+          class="white--text"
           @click="addItem" 
           :disabled="newItem === ''">
             Add
@@ -33,6 +40,7 @@
           checked: false
         });
         this.newItem = '';
+        this.$refs.addItemInput.focus();
       }
     }
   }
